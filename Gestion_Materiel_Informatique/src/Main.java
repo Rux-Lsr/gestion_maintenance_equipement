@@ -1,8 +1,8 @@
 import javax.swing.UIManager;
 
-import ict.view.FenetreAjoutMateriel;
-import ict.view.FenetrePrincipale;
-import ict.view.InfoMateriel;
+
+import ict.view.*;
+
 
 public class Main
 {
@@ -26,8 +26,25 @@ public class Main
         {
             e.printStackTrace();
         }
-        FenetrePrincipale fenetrePrincipale = new FenetrePrincipale();
-        fenetrePrincipale.showFenetre();
+
+
+        /*String[] tab = {"Ordinateur", "Climatiseur", "Cables reseaux"};
+        InfoMateriel info;
+
+        System.out.println("Hello world!");
+        FenetreAjoutMateriel fenetreAjoutMateriel = new FenetreAjoutMateriel(null, tab, true);
+        info = fenetreAjoutMateriel.showFenetre();
+
+        if(info == null)
+        {
+            System.out.println("null");
+        }
+        else
+        {
+            System.out.println(info.getCategorieMateriel());
+        }*/
+
+
 
     }
 }
