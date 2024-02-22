@@ -68,7 +68,7 @@ public class FenetrePrincipale extends JFrame
         JToolBar toolBar = new JToolBar();
 
         // creation des boutons
-        this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter2.png"));
+        this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter3.png"));
         this.boutonSupprimeMateriel = new JButton(new ImageIcon("Images/corbeille2.png"));
         this.boutonEditMateriel = new JButton(" EDITION ");
 
@@ -216,7 +216,7 @@ public class FenetrePrincipale extends JFrame
 
 
         // --------------AJOUT DANS LA FENETRE----------------
-        // AJout des items Sdu menu gestion
+        // AJout des items du menu gestion
         menuGestion.add(itemAjoutCategorie);
         // Ajout des menus Sdans la barre de nenu
         barMenu.add(menuFichier);
