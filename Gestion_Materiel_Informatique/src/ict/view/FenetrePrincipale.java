@@ -86,7 +86,7 @@ public class FenetrePrincipale extends JFrame
         // creation des boutons
         this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter3.png"));
         this.boutonSupprimeMateriel = new JButton(new ImageIcon("Images/corbeille2.png"));
-        this.boutonEditMateriel = new JButton(" EDITION ");
+        this.boutonEditMateriel = new JButton(new ImageIcon("Images/edition1.png"));
 
         // Ajout des actions sur les boutons
         this.boutonAjoutMateriel.addActionListener(new OuvrirMenuAjoutMateriel());
