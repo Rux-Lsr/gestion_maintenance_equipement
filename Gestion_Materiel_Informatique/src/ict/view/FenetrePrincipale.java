@@ -17,6 +17,8 @@ public class FenetrePrincipale extends JFrame
     private JButton boutonSupprimeMateriel;
     private JButton boutonEditMateriel;
     private JComboBox comboBoxCategorie;
+    private JComboBox comboBoxOrganisation;
+    private JCheckBox comboBoxTrie;
     private class ModelTable extends AbstractTableModel
     {
         private Object[][] donnee; // Donnees du tableau
@@ -66,7 +68,7 @@ public class FenetrePrincipale extends JFrame
         JToolBar toolBar = new JToolBar();
 
         // creation des boutons
-        this.boutonAjoutMateriel = new JButton("  +  ");
+        this.boutonAjoutMateriel = new JButton(new ImageIcon());
         this.boutonSupprimeMateriel = new JButton("  -  ");
         this.boutonEditMateriel = new JButton(" EDITION ");
 
@@ -82,17 +84,63 @@ public class FenetrePrincipale extends JFrame
 
     private JPanel initPanelGauche()
     {
+
+        // ------------CREATION DES COMPOSANTS----------------
+
+
+        // Creation de spring layout du panel panelTmp
+        SpringLayout spl1 = new SpringLayout();
+
         // Creation du panel gauche
         JPanel panelGauche = new JPanel();
+        JPanel panelTmp = new JPanel(spl1);
 
-        // Creation du comboBoxCategorie
-        comboBoxCategorie = new JComboBox();
+        // Creation des comboBox
+        this.comboBoxOrganisation = new JComboBox();
+        this.comboBoxCategorie = new JComboBox();
+        // Creation des labels
+        JLabel labelCategorie = new JLabel("CATEGORIE: ");
+        JLabel labelOrganisation = new JLabel("TRIE: ");
 
-        //Ajustement de la taille du ComboxCategorie
-        comboBoxCategorie.setPreferredSize(new Dimension(200, 30));
 
-        //Ajout des composants dans le panel gauche
-        panelGauche.add(comboBoxCategorie);
+
+
+
+        // -------------CONFIGURATION DES COMPOSANTS-----------
+
+        //Ajustement de la taille des Combox
+        this.comboBoxCategorie.setPreferredSize(new Dimension(200, 30));
+        this.comboBoxOrganisation.setPreferredSize(new Dimension(200, 30));
+        // redimentionnement du panelTmp
+        //panelTmp.setBackground(Color.BLUE);
+        panelTmp.setPreferredSize(new Dimension(300, 500));
+
+        // positionnement du comboBoxCategorie
+        spl1.putConstraint(SpringLayout.NORTH, labelCategorie, 30, SpringLayout.NORTH, panelTmp);
+        spl1.putConstraint(SpringLayout.WEST, labelCategorie, 110, SpringLayout.WEST, panelTmp);
+
+        //positionnement du label categorie
+        spl1.putConstraint(SpringLayout.NORTH, this.comboBoxCategorie, 5, SpringLayout.SOUTH, labelCategorie);
+        spl1.putConstraint(SpringLayout.WEST, this.comboBoxCategorie, 50, SpringLayout.WEST, panelTmp);
+
+        //
+        spl1.putConstraint(SpringLayout.NORTH, this.comboBoxOrganisation, 5, SpringLayout.SOUTH, labelOrganisation);
+        spl1.putConstraint(SpringLayout.WEST, this.comboBoxOrganisation, 50, SpringLayout.WEST, panelTmp);
+
+        //positionnement du label organisation
+        spl1.putConstraint(SpringLayout.NORTH, labelOrganisation, 10, SpringLayout.SOUTH, comboBoxCategorie);
+        spl1.putConstraint(SpringLayout.WEST, labelOrganisation, 127, SpringLayout.WEST, panelTmp);
+
+
+        //--------------AJOUT DES COMPOSANTS-----------------
+
+        //Ajout des composants dans le panel  panelTmp et le panel gauche
+
+        panelTmp.add(labelOrganisation);
+        panelTmp.add(this.comboBoxCategorie);
+        panelTmp.add(labelCategorie);
+        panelTmp.add(this.comboBoxOrganisation);
+        panelGauche.add(panelTmp);
 
         return panelGauche;
     }
@@ -108,7 +156,8 @@ public class FenetrePrincipale extends JFrame
 
         // Creation du table materiel
         String[][] donnees = {{"0", "Ordinateur", "18/12/2003", "18/12/2024"}
-                , {"0", "Laptop2", "18/12/2003", "18/12/2024"}};
+                , {"1", "Laptop2", "18/12/2003", "18/12/2024"},
+                {"1", "Laptop2", "18/12/2003", "18/12/2024"},{"1", "Laptop2", "18/12/2003", "18/12/2024"}};
         String[] titres = {"IDENTIFIANT", "NOM MATERIEL", "DATE ACQUISITION", "DATE PROCHAINE MAITENANCE"};
         this.tableListMateriel = new JTable(new ModelTable(titres, donnees));
 
