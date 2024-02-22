@@ -3,6 +3,7 @@ import javax.swing.UIManager;
 
 import ict.view.*;
 
+
 public class Main
 {
     public static void main(String[] args)
@@ -26,6 +27,7 @@ public class Main
             e.printStackTrace();
         }
 
+
         /*String[] tab = {"Ordinateur", "Climatiseur", "Cables reseaux"};
         InfoMateriel info;
 
@@ -41,6 +43,7 @@ public class Main
         {
             System.out.println(info.getCategorieMateriel());
         }*/
+
 
 
     }
