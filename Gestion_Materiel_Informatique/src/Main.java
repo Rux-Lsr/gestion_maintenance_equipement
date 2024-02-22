@@ -1,7 +1,7 @@
 import javax.swing.UIManager;
 
-import ict.view.FenetreAjoutMateriel;
-import ict.view.InfoMateriel;
+
+import ict.view.*;
 
 public class Main
 {
@@ -26,7 +26,7 @@ public class Main
             e.printStackTrace();
         }
 
-        String[] tab = {"Ordinateur", "Climatiseur", "Cables reseaux"};
+        /*String[] tab = {"Ordinateur", "Climatiseur", "Cables reseaux"};
         InfoMateriel info;
 
         System.out.println("Hello world!");
@@ -40,7 +40,8 @@ public class Main
         else
         {
             System.out.println(info.getCategorieMateriel());
-        }
+        }*/
+
 
     }
 }
