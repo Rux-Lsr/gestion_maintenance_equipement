@@ -68,8 +68,8 @@ public class FenetrePrincipale extends JFrame
         JToolBar toolBar = new JToolBar();
 
         // creation des boutons
-        this.boutonAjoutMateriel = new JButton(new ImageIcon());
-        this.boutonSupprimeMateriel = new JButton("  -  ");
+        this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter2.png"));
+        this.boutonSupprimeMateriel = new JButton(new ImageIcon("Images/corbeille2.png"));
         this.boutonEditMateriel = new JButton(" EDITION ");
 
 
@@ -185,7 +185,7 @@ public class FenetrePrincipale extends JFrame
 
         // Creation du separateur
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panelGauche, panelDroit);
-        splitPane.setDividerLocation(300);//ajustement de la position verticale du separateur
+        splitPane.setDividerLocation(250);//ajustement de la position verticale du separateur
 
 
 
@@ -204,16 +204,21 @@ public class FenetrePrincipale extends JFrame
         JMenu menuFichier = new JMenu("Fichier");
         JMenu menuGestion = new JMenu("Gestion");
         JMenu menuAides = new JMenu("Aides");
+        // creation des items du menu gestion
+        JMenuItem itemAjoutCategorie = new JMenuItem("Ajouter categorie");
 
 
         // ------------------CONFIGURATION-------------------
-        //this.barMenu.setPreferredSize(new Dimension(100,25));
+        //ajustement de la taille de la barre du menu
+        this.barMenu.setPreferredSize(new Dimension(100,29));
 
 
 
 
         // --------------AJOUT DANS LA FENETRE----------------
-        // Ajout des menus dans la barre de nenu
+        // AJout des items Sdu menu gestion
+        menuGestion.add(itemAjoutCategorie);
+        // Ajout des menus Sdans la barre de nenu
         barMenu.add(menuFichier);
         barMenu.add(menuGestion);
         barMenu.add(menuAides);
