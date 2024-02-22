@@ -1,7 +1,6 @@
-import javax.swing.UIManager;
+import ict.view.FenetreMaintenance;
 
-
-import ict.view.*;
+import javax.swing.*;
 
 public class Main
 {
@@ -41,7 +40,7 @@ public class Main
         {
             System.out.println(info.getCategorieMateriel());
         }*/
-
+        FenetreMaintenance
 
     }
 }
