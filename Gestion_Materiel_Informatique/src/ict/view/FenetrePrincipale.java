@@ -63,20 +63,30 @@ public class FenetrePrincipale extends JFrame
 
     }
     // -------------- CLASSE LISTENER(ACTIONS)--------------
-    class OuvrirMenuAjoutMateriel implements ActionListener
+    private class OuvrirMenuAjoutMateriel implements ActionListener
     {
 
 
         public void actionPerformed(ActionEvent actionEvent)
         {
-            String[] categorie = {"Ordinateur", "Eclerage"};
+            //Attention les donnee de categories vient du model
+            String[] categories = {"Ordinateur", "Eclerage"};
 
            FenetreAjoutMateriel fenetreAjoutMateriel = new FenetreAjoutMateriel(null,
-                   categorie, true);
+                   categories, true);
            fenetreAjoutMateriel.showFenetre();
 
         }
     }
+    private class OuvrirFenetreMaintenance implements ActionListener
+    {
+        public void actionPerformed(ActionEvent actionEvent)
+        {
+            FenetreMaintenance fenetreMaintenance = new FenetreMaintenance();
+            fenetreMaintenance.showWindow();
+        }
+    }
+
 
     private JToolBar initBarOutil()
     {
