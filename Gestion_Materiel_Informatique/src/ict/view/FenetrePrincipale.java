@@ -3,6 +3,8 @@ package ict.view;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 
@@ -60,7 +62,21 @@ public class FenetrePrincipale extends JFrame
         }
 
     }
+    // -------------- CLASSE LISTENER(ACTIONS)--------------
+    class OuvrirMenuAjoutMateriel implements ActionListener
+    {
 
+
+        public void actionPerformed(ActionEvent actionEvent)
+        {
+            String[] categorie = {"Ordinateur", "Eclerage"};
+
+           FenetreAjoutMateriel fenetreAjoutMateriel = new FenetreAjoutMateriel(null,
+                   categorie, true);
+           fenetreAjoutMateriel.showFenetre();
+
+        }
+    }
 
     private JToolBar initBarOutil()
     {
@@ -71,6 +87,9 @@ public class FenetrePrincipale extends JFrame
         this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter3.png"));
         this.boutonSupprimeMateriel = new JButton(new ImageIcon("Images/corbeille2.png"));
         this.boutonEditMateriel = new JButton(" EDITION ");
+
+        // Ajout des actions sur les boutons
+        this.boutonAjoutMateriel.addActionListener(new OuvrirMenuAjoutMateriel());
 
 
 
