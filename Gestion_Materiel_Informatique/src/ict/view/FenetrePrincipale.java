@@ -3,6 +3,10 @@ package ict.view;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 
 
 //constructeur
@@ -58,6 +62,30 @@ public class FenetrePrincipale extends JFrame
         }
 
     }
+    // -------------- CLASSE LISTENER(ACTIONS)--------------
+    private class OuvrirMenuAjoutMateriel implements ActionListener
+    {
+
+
+        public void actionPerformed(ActionEvent actionEvent)
+        {
+            //Attention les donnee de categories vient du model
+            String[] categories = {"Ordinateur", "Eclerage"};
+
+           FenetreAjoutMateriel fenetreAjoutMateriel = new FenetreAjoutMateriel(null,
+                   categories, true);
+           fenetreAjoutMateriel.showFenetre();
+
+        }
+    }
+    private class OuvrirFenetreMaintenance implements ActionListener
+    {
+        public void actionPerformed(ActionEvent actionEvent)
+        {
+            FenetreMaintenance fenetreMaintenance = new FenetreMaintenance();
+            fenetreMaintenance.showWindow();
+        }
+    }
 
 
     private JToolBar initBarOutil()
@@ -66,9 +94,12 @@ public class FenetrePrincipale extends JFrame
         JToolBar toolBar = new JToolBar();
 
         // creation des boutons
-        this.boutonAjoutMateriel = new JButton(new ImageIcon("../Images/ajouter3.png"));
-        this.boutonSupprimeMateriel = new JButton(new ImageIcon("../Images/corbeille2.png"));
-        this.boutonEditMateriel = new JButton(" EDITION ");
+        this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter3.png"));
+        this.boutonSupprimeMateriel = new JButton(new ImageIcon("Images/corbeille2.png"));
+        this.boutonEditMateriel = new JButton(new ImageIcon("Images/edition1.png"));
+
+        // Ajout des actions sur les boutons
+        this.boutonAjoutMateriel.addActionListener(new OuvrirMenuAjoutMateriel());
 
 
 
