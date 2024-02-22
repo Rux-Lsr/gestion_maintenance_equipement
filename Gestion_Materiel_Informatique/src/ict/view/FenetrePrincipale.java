@@ -3,8 +3,6 @@ package ict.view;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 
 
 //constructeur
@@ -68,8 +66,8 @@ public class FenetrePrincipale extends JFrame
         JToolBar toolBar = new JToolBar();
 
         // creation des boutons
-        this.boutonAjoutMateriel = new JButton(new ImageIcon("Images/ajouter3.png"));
-        this.boutonSupprimeMateriel = new JButton(new ImageIcon("Images/corbeille2.png"));
+        this.boutonAjoutMateriel = new JButton(new ImageIcon("../Images/ajouter3.png"));
+        this.boutonSupprimeMateriel = new JButton(new ImageIcon("../Images/corbeille2.png"));
         this.boutonEditMateriel = new JButton(" EDITION ");
 
 
