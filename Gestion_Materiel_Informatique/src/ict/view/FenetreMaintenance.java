@@ -6,7 +6,6 @@ import java.sql.Date;
 import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Objects;
 
 public class FenetreMaintenance extends JDialog {
     private JPanel contentPane;
@@ -90,9 +89,10 @@ public class FenetreMaintenance extends JDialog {
     }
 
 
-    public  static void showWindow(){
+    public void showWindow(){
         FenetreMaintenance dialog = new FenetreMaintenance();
         dialog.pack();
+        dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
         System.exit(0);
     }
@@ -101,6 +101,7 @@ public class FenetreMaintenance extends JDialog {
         textArea1.setText("Entrez les observations sur la maintenance du materiel "+ id_materiel);
         FenetreMaintenance dialog = new FenetreMaintenance();
         dialog.pack();
+        dialog.setLocationRelativeTo(null);
         dialog.setVisible(true);
         System.exit(0);
     }
@@ -110,7 +111,7 @@ public class FenetreMaintenance extends JDialog {
         String[] options ={"Default", "personalised"} ;
         comboBox1 = new JComboBox<>(options);
         textArea1 = new JTextArea(25,50);
-        this.setLocationRelativeTo(null);
+
 
         Format dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         formattedTextField1 = new JFormattedTextField(dateFormat);
